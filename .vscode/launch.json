@@ -1,0 +1,23 @@
+{
+    // Use o IntelliSense para saber mais sobre os atributos possíveis.
+    // Focalizar para exibir as descrições dos atributos existentes.
+    // Para obter mais informações, acesse: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "vmArgs": "--module-path /Users/Lucas/java/javafx-sdk-17.0.1/lib --add-modules javafx.controls,javafx.fxml",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch App",
+            "request": "launch",
+            "mainClass": "visao.App",
+            "vmArgs": "--module-path /Users/Lucas/java/javafx-sdk-17.0.1/lib --add-modules javafx.controls,javafx.fxml",
+            "projectName": "postoDeUmaMatriz_c9f4d31a"
+        }
+    ]
+}
