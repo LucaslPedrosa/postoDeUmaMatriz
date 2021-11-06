@@ -2,8 +2,8 @@ package controle;
 
 public class Algoritimo {
 
-	static int R = 4;
-	static int C = 4;
+	public static int R = 4;
+	public static int C = 4;
 
 	// function for exchanging two rows
 	// of a matrix
@@ -110,10 +110,7 @@ public class Algoritimo {
 	// Driver code
 	public static void main(String[] args) {
 
-		int mat[][] = { { 10, 10, 10, 10 },
-		 { 20, 20, 10, 10 },
-		  { 40, 30, 30, 10 },
-			 { 10, 20, 30, 40 } };
+		int mat[][] = {{ 10, 10, 10 },{ 10, 10, 10},{ 40, 30, 30 }};
 
 		System.out.print("Rank of the matrix is : " + rankOfMatrix(mat));
 	}

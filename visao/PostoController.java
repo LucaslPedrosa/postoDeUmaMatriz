@@ -32,8 +32,10 @@ public class PostoController {
         try {
             numeroDeLinhas =  Integer.parseInt(numeroDeLinhasTextField.getText());
             numeroDeColuna = Integer.parseInt(numeroDeColunasTextField.getText());
+            
             GridPane.setColumnIndex(gridPane, numeroDeColuna);
             GridPane.setRowIndex(gridPane, numeroDeLinhas);
+
             for (int i = 0; i < numeroDeLinhas; ++i) {
                 for (int j = 0; j < numeroDeColuna; ++j) {
                     gridPane.add(new TextField(), j, i);
@@ -54,26 +56,33 @@ public class PostoController {
         Node resultado = null;
 
         ObservableList<Node> childrens = gridPane.getChildren();
-        int matrix[][];
+        int matrix[][] = new int[numeroDeLinhas][numeroDeColuna];
         int lin = 0;
         int col = 0;
 
         for(Node node : childrens){
             if(node instanceof TextField){
-                //matrix[lin][col] = Integer.parseInt(((TextField)node).getText());
+
+
+                matrix[lin][col] = Integer.parseInt(((TextField)node).getText());
                 System.out.println(Integer.parseInt(((TextField)node).getText()));
+
                 lin++;
-                if(numeroDeColuna%lin == 0){
+                if(lin == numeroDeLinhas){
                     col++;
+                    lin = 0;
                 }
+                
             }
         }
 
-        // try{
-        // System.out.print("Rank of the matrix is : " + Algoritimo.rankOfMatrix(matrix));
-        // }catch(Exception e){
-        //     System.out.println(e.getStackTrace());
-        // }
+        try{
+            Algoritimo.C = numeroDeColuna;
+            Algoritimo.R = numeroDeLinhas;
+            System.out.print("Rank of the matrix is : " + Algoritimo.rankOfMatrix(matrix));
+        }catch(Exception e){
+            System.out.println(e.getStackTrace());
+        }
     }
     
 
