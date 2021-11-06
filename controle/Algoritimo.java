@@ -28,7 +28,7 @@ public class Algoritimo {
 	}
 
 	// function for finding rank of matrix
-	static int rankOfMatrix(int mat[][]) {
+	public static int rankOfMatrix(int mat[][]) {
 
 		int rank = C;
 

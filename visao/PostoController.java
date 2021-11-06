@@ -1,12 +1,18 @@
 package visao;
 
+import controle.Algoritimo;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 
 public class PostoController {
+
+    static int numeroDeLinhas =  0;
+    static int numeroDeColuna = 0;
 
     @FXML
     private TextField numeroDeLinhasTextField;
@@ -24,8 +30,8 @@ public class PostoController {
     @FXML
     void mostrarMatrizButton(ActionEvent event) {
         try {
-            int numeroDeLinhas =  Integer.parseInt(numeroDeLinhasTextField.getText());
-            int numeroDeColuna = Integer.parseInt(numeroDeColunasTextField.getText());
+            numeroDeLinhas =  Integer.parseInt(numeroDeLinhasTextField.getText());
+            numeroDeColuna = Integer.parseInt(numeroDeColunasTextField.getText());
             GridPane.setColumnIndex(gridPane, numeroDeColuna);
             GridPane.setRowIndex(gridPane, numeroDeLinhas);
             for (int i = 0; i < numeroDeLinhas; ++i) {
@@ -45,6 +51,29 @@ public class PostoController {
     @FXML
     void calcularPostoDeMatriz(ActionEvent event) {
 
+        Node resultado = null;
+
+        ObservableList<Node> childrens = gridPane.getChildren();
+        int matrix[][];
+        int lin = 0;
+        int col = 0;
+
+        for(Node node : childrens){
+            if(node instanceof TextField){
+                //matrix[lin][col] = Integer.parseInt(((TextField)node).getText());
+                System.out.println(Integer.parseInt(((TextField)node).getText()));
+                lin++;
+                if(numeroDeColuna%lin == 0){
+                    col++;
+                }
+            }
+        }
+
+        // try{
+        // System.out.print("Rank of the matrix is : " + Algoritimo.rankOfMatrix(matrix));
+        // }catch(Exception e){
+        //     System.out.println(e.getStackTrace());
+        // }
     }
     
 
