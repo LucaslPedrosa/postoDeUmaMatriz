@@ -1,6 +1,7 @@
 package visao;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
@@ -14,8 +15,8 @@ public class ControleApp {
     private TextField numeroDeColunasTextField;
 
     @FXML
-    private AnchorPane anchorPaneGridPane;
-
+    private Button calcularButton;
+    
     @FXML
     private GridPane gridPane;
 
@@ -26,14 +27,24 @@ public class ControleApp {
             int numeroDeColuna = Integer.parseInt(numeroDeColunasTextField.getText());
             GridPane.setColumnIndex(gridPane, numeroDeColuna);
             GridPane.setRowIndex(gridPane, numeroDeLinhas);
-
-        anchorPaneGridPane.setVisible(true);
+            for (int i = 0; i < numeroDeLinhas; ++i) {
+                for (int j = 0; j < numeroDeColuna; ++j) {
+                    gridPane.add(new TextField(), i, j);
+                }
+            }
+            calcularButton.setVisible(true);
+            //Ainda não consegui manipular o textField que é criado '-'
+            
             
         } catch (NumberFormatException n) {
             //TODO: handle exception
         }
     }
+
+    @FXML
+    void calcularPostoDeMatriz(ActionEvent event) {//Vai ser onde vamos chamar o algoritmo para calcular
+
+    }
     
 
 }
-
