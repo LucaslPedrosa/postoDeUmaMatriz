@@ -2,15 +2,19 @@ package visao;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 
 public class PostoResultado {
 
     @FXML
-    private String resultadoTextField = setText();
+    private TextField resultadoTextField;
 
-    private String setText() {
-        return String.valueOf(PostoController.getResultado());
+    @FXML
+    void mostrarResultado(ActionEvent event) {
+        resultadoTextField.setText(String.valueOf(PostoController.getResultado()));
     }
+
+   
     
 
     

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -8,14 +9,14 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="143.0" prefWidth="389.0" style="-fx-background-color: #7A98BF;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="visao.PostoResultado">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="148.0" prefWidth="389.0" style="-fx-background-color: #7A98BF;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="visao.PostoResultado">
    <children>
       <Label layoutX="82.0" layoutY="63.0" text="Posto da matriz = ">
          <font>
             <Font name="Times New Roman Bold" size="15.0" />
          </font>
       </Label>
-      <TextField fx:id="resultadoTextField" editable="false" focusTraversable="false" layoutX="199.0" layoutY="61.0" onAction="#resultadoOnActionTextField" prefHeight="25.0" prefWidth="98.0" />
+      <TextField fx:id="resultadoTextField" editable="false" focusTraversable="false" layoutX="199.0" layoutY="61.0" prefHeight="25.0" prefWidth="98.0" />
       <ImageView fitHeight="52.0" fitWidth="65.0" layoutX="14.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Imagens/matrix_logo_icon_145079.png" />
@@ -28,5 +29,6 @@
       </ImageView>
       <AnchorPane layoutY="-2.0" prefHeight="35.0" prefWidth="389.0" style="-fx-background-color: #457ABF;" />
       <AnchorPane layoutY="116.0" prefHeight="35.0" prefWidth="389.0" style="-fx-background-color: #457ABF;" />
+      <Button layoutX="131.0" layoutY="120.0" mnemonicParsing="false" onAction="#mostrarResultado" prefHeight="18.0" prefWidth="117.0" text="Mostrar resultado" />
    </children>
 </AnchorPane>

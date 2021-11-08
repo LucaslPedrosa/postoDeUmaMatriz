@@ -36,11 +36,11 @@ public class App extends Application{
             palco.setY(event.getScreenY()-yoffset);
         });
 
-        palco.initStyle(StageStyle.TRANSPARENT);
+        //palco.initStyle(StageStyle.TRANSPARENT);
         Scene tela = new Scene(raiz);
-        tela.setFill(javafx.scene.paint.Color.TRANSPARENT);
+        //tela.setFill(javafx.scene.paint.Color.TRANSPARENT);
         
-        palco.setTitle("voce nao deveria estar vendo isso");
+        palco.setTitle("Calcular Posto de uma matriz");
         palco.setScene(tela);
 
         tela.setFill(javafx.scene.paint.Color.TRANSPARENT);
