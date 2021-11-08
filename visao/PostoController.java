@@ -1,5 +1,7 @@
 package visao;
 
+import javax.swing.JOptionPane;
+
 import controle.Algoritimo;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -13,6 +15,7 @@ public class PostoController {
 
     static int numeroDeLinhas =  0;
     static int numeroDeColuna = 0;
+    static int resultado = 0;
 
     @FXML
     private TextField numeroDeLinhasTextField;
@@ -53,7 +56,6 @@ public class PostoController {
     @FXML
     void calcularPostoDeMatriz(ActionEvent event) {
 
-        Node resultado = null;
 
         ObservableList<Node> childrens = gridPane.getChildren();
         int matrix[][] = new int[numeroDeLinhas][numeroDeColuna];
@@ -79,11 +81,15 @@ public class PostoController {
         try{
             Algoritimo.C = numeroDeColuna;
             Algoritimo.R = numeroDeLinhas;
-            System.out.print("Rank of the matrix is : " + Algoritimo.rankOfMatrix(matrix));
+            //JOptionPane.showMessageDialog(null,"O posto da matriz = " + Algoritimo.rankOfMatrix(matrix));
+            resultado = Algoritimo.rankOfMatrix(matrix);
+            App.changeScreenResultado(event);
         }catch(Exception e){
             System.out.println(e.getStackTrace());
         }
     }
-    
 
+    public static int getResultado () {
+        return resultado;
+    }
 }
