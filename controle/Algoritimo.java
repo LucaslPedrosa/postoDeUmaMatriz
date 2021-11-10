@@ -19,7 +19,7 @@ public class Algoritimo {
 	}
 
 	// função irá mostrar a matrix
-	static void display(int mat[][], int row, int col) {
+	public static void display(int mat[][], int row, int col) {
 		for (int i = 0; i < row; i++) {
 
 			for (int j = 0; j < col; j++)
@@ -33,7 +33,9 @@ public class Algoritimo {
 	// Função principal para calcular o posto
 	public static int rankOfMatrix(int mat[][]) {
 
-		int rank = C;
+
+		int rank = Math.min(C, R);
+		Algoritimo.display(mat, R, C);
 
 		for (int row = 0; row < rank; row++) {
 
@@ -113,15 +115,16 @@ public class Algoritimo {
 
 		}
 
+		Algoritimo.display(mat, R, C);
 		return rank;
 	}
 
 	// Usamos apenas para testes
 	public static void main(String[] args) {
 
-		int mat[][] = {{ 10, 10, 10 },{ 10, 10, 10},{ 40, 30, 30 }};
+		//int mat[][] = {{ 10, 10, 10 },{ 10, 10, 10},{ 40, 30, 30 }};
 
-		System.out.print("Rank of the matrix is : " + rankOfMatrix(mat));
+		//System.out.print("Rank of the matrix is : " + rankOfMatrix(mat));
 	}
 
 }

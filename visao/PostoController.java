@@ -50,29 +50,34 @@ public class PostoController {
             
         } catch (NumberFormatException n) {
             //TODO: handle exception
+            System.out.println(n.getStackTrace());
         }
     }
 
     @FXML
     void calcularPostoDeMatriz(ActionEvent event) {
 
-
         ObservableList<Node> childrens = gridPane.getChildren();
         int matrix[][] = new int[numeroDeLinhas][numeroDeColuna];
+
         int lin = 0;
         int col = 0;
+
+        // 2 3
+        // 1 2 3
+        // 4 5 6
 
         for(Node node : childrens){
             if(node instanceof TextField){
 
 
                 matrix[lin][col] = Integer.parseInt(((TextField)node).getText());
-                System.out.println(Integer.parseInt(((TextField)node).getText()));
+                //System.out.println(Integer.parseInt(((TextField)node).getText()));
 
-                lin++;
-                if(lin == numeroDeLinhas){
-                    col++;
-                    lin = 0;
+                col++;
+                if(col == numeroDeColuna){
+                    col = 0;
+                    lin++;
                 }
                 
             }
@@ -83,6 +88,7 @@ public class PostoController {
             Algoritimo.R = numeroDeLinhas;
             //JOptionPane.showMessageDialog(null,"O posto da matriz = " + Algoritimo.rankOfMatrix(matrix));
             resultado = Algoritimo.rankOfMatrix(matrix);
+            //Algoritimo.display(matrix,numeroDeLinhas,numeroDeColuna);
             App.changeScreenResultado(event);
         }catch(Exception e){
             System.out.println(e.getStackTrace());
